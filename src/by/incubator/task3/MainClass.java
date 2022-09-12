@@ -35,7 +35,11 @@ public class MainClass {
         String str2 = "JAVA";
         String str3 = "C#";
         String str4 = "Java";
-        compareTheResults(str1, str2, str3, str4);
+        compareInParis(str1, str2, str3, str4);
+        equalsMethod(str1, str2);
+        operationMethod(str1, str2);
+        subStringMethod(str1, str4);
+        operatorNull(str1);
     }
 
     private static void addingToTheEnd(String str) {
@@ -107,6 +111,7 @@ public class MainClass {
             }
             System.out.print(str.charAt(i));
         }
+        System.out.println();
     }
 
     private static void replaceEmptyString(String[] arr, int size, BufferedReader scanner) throws IOException {
@@ -119,21 +124,38 @@ public class MainClass {
         }
     }
 
-    private static void compareTheResults(String str1, String str2, String str3, String str4) {
-        boolean res;
-        res = str1.equals(str2);
-        System.out.println(res);
+    private static void compareInParis(String str1, String str2, String str3, String str4) {
+        System.out.println(str1.equals(str2));
 
-        res = str1.equalsIgnoreCase(str2);
-        System.out.println(res);
+        System.out.println(str1.equals(str3));
 
+        System.out.println(str1.equals(str4));
+
+        System.out.println(str2.equals(str3));
+
+        System.out.println(str2.equals(str4));
+
+        System.out.println(str3.equals(str4));
+    }
+
+    public static void equalsMethod(String str1, String str2) {
+        System.out.println(str1.equalsIgnoreCase(str2));
+    }
+
+    public static void operationMethod(String str1, String str4) {
         System.out.println(str1 == str4);
+    }
 
+    public static void subStringMethod(String str1, String str4) {
         str1 = " JavaJava";
         System.out.println(str1.substring(4) == str4);
+    }
 
+    public static void operatorNull(String str1) {
         System.out.println(str1 == null);
+    }
 
+    public static void compareOperationNull(String str1) {
         str1 = null;
         System.out.println(str1 == null);
     }

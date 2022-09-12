@@ -13,13 +13,9 @@ public class MainClass {
         removeFromText(str);
         replacingSubstring(str);
 
-        Scanner scannerForReverse = new Scanner(System.in);
-        String strForReverse = scannerForReverse.nextLine();
-        reverse(strForReverse);
-
-        Scanner scannerForRemoveSpaces = new Scanner(System.in);
-        String strForRemoveSpaces = scannerForRemoveSpaces.nextLine();
-        removeSpaces(strForRemoveSpaces);
+        String strScanner = scanner();
+        reverse(strScanner);
+        removeSpaces(strScanner);
 
         String scannerForOutputUpperCaseLetters = new Scanner(System.in).nextLine();
         StringBuilder strForOutputUpperCase = new StringBuilder();
@@ -65,6 +61,12 @@ public class MainClass {
         System.out.println(newStr);
     }
 
+    private static String scanner() throws IOException {
+        BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
+        String strScanner = scanner.readLine();
+        return strScanner;
+    }
+
     private static void reverse(String str) {
         char[] arrayChar = str.toCharArray();
         String result = "";
@@ -93,6 +95,7 @@ public class MainClass {
                 System.out.print(str.charAt(i));
             }
         }
+        System.out.println();
     }
 
     private static void upperCaseEvenLetters(StringBuilder str) {

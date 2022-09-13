@@ -8,61 +8,106 @@ import java.util.Scanner;
 public class MainClass {
     public static void main(String[] args) throws IOException {
         String str = "Hello, user! How are you?";
-//        addingToTheEnd(str);
-//        insertAtSpecificPosition(str);
-//        removeFromText(str);
-//        replacingSubstring(str);
-//
-//        String strScanner = scanner();
-//        reverse(strScanner);
-//        removeSpaces(strScanner);
-//
-//        String scannerForOutputUpperCaseLetters = new Scanner(System.in).nextLine();
-//        StringBuilder strForOutputUpperCase = new StringBuilder();
-//        upperCaseLetters(strForOutputUpperCase.append(scannerForOutputUpperCaseLetters));
-//
-//        String scannerForOutputEvenLetters = new Scanner(System.in).nextLine();
-//        StringBuilder strForOutputEvenLetters = new StringBuilder();
-//        upperCaseEvenLetters(strForOutputEvenLetters.append(scannerForOutputEvenLetters));
-//
-//        BufferedReader scannerForReplaceEmptyString = new BufferedReader(new InputStreamReader(System.in));
-//        Scanner strForReplaceEmptyString = new Scanner(System.in);
-//        int size = strForReplaceEmptyString.nextInt();
-//        String[] arrayString = new String[size];
-//        replaceEmptyString(arrayString, size, scannerForReplaceEmptyString);
+        String resultAddingToTheEnd = addingToTheEnd(str);
+        printAddingToTheEnd(resultAddingToTheEnd);
 
+        String resultInsertAtSpecificPosition = insertAtSpecificPosition(str);
+        printInsertAtSpecificPosition(resultInsertAtSpecificPosition);
+
+
+        String resultRemoveFromText = removeFromText(str);
+        printRemoveFromText(resultRemoveFromText);
+
+        String resultReplacingSubstring = replacingSubstring(str);
+        printReplacingSubstring(resultReplacingSubstring);
+
+        String strScanner = scanner();
+        String resultReverse = reverse(strScanner);
+        printReverse(resultReverse);
+
+        String resultRemoveSpaces = removeSpaces(strScanner);
+        printRemoveSpaces(resultRemoveSpaces);
+        int resultKolRemoveSpaces = kolRemoveSpaces(strScanner);
+        printKolRemoveSpaces(resultKolRemoveSpaces);
+
+        String scannerForOutputUpperCaseLetters = new Scanner(System.in).nextLine();
+        StringBuilder strForOutputUpperCase = new StringBuilder();
+        upperCaseLetters(strForOutputUpperCase.append(scannerForOutputUpperCaseLetters));
+
+        String scannerForOutputEvenLetters = new Scanner(System.in).nextLine();
+        StringBuilder strForOutputEvenLetters = new StringBuilder();
+        upperCaseEvenLetters(strForOutputEvenLetters.append(scannerForOutputEvenLetters));
+
+        BufferedReader scannerForReplaceEmptyString = new BufferedReader(new InputStreamReader(System.in));
+        Scanner strForReplaceEmptyString = new Scanner(System.in);
+        int size = strForReplaceEmptyString.nextInt();
+        String arrayString[] = replaceEmptyString(size, scannerForReplaceEmptyString);
+        printReplaceEmptyString(arrayString);
         String str1 = "Java";
         String str2 = "JAVA";
         String str3 = "C#";
         String str4 = "Java";
-        System.out.println(compareInParis(str1, str4));  // ещё 5 методов и print
-//        equalsMethod(str1, str2);
-//        operationMethod(str1, str2);
-//        subStringMethod(str1, str4);
-//        operatorNull(str1);
+        boolean result12 = compareInParisStr1AndStr2(str1, str2);
+        printCompareInParis(result12);
+        boolean result13 = compareInParisStr1AndStr3(str1, str3);
+        printCompareInParis(result13);
+        boolean result14 = compareInParisStr1AndStr4(str1, str4);
+        printCompareInParis(result14);
+        boolean result23 = compareInParisStr2AndStr3(str2, str3);
+        printCompareInParis(result23);
+        boolean result24 = compareInParisStr2AndStr4(str2, str4);
+        printCompareInParis(result24);
+        boolean result34 = compareInParisStr3AndStr4(str3, str4);
+        printCompareInParis(result34);
+
+        boolean resultEqualsMethod = equalsMethod(str1, str2);
+        printEqualsMethod(resultEqualsMethod);
+
+        boolean resultOperationMethod = operationMethod(str1, str4);
+        printOperationMethod(resultOperationMethod);
+
+        boolean resultSubStringMethod = subStringMethod(str1, str4);
+        printSubStringMethod(resultSubStringMethod);
+        boolean resultOperatorNull = operatorNull(str1);
+        printOperatorNull(resultOperatorNull);
+
+        boolean resultCompareOperationNull = compareOperationNull(str1);
+        printCompareOperationNull(resultCompareOperationNull);
     }
 
-    private static void addingToTheEnd(String str) {
+    private static String addingToTheEnd(String str) {
         String strNewEndWord = "Fine!";
-        String newWord = str + strNewEndWord;
-        System.out.println(newWord);
+        return str + strNewEndWord;
     }
 
-    private static void insertAtSpecificPosition(String str) {
+    public static void printAddingToTheEnd(String result) {
+        System.out.println(result);
+    }
+
+    private static String insertAtSpecificPosition(String str) {
         String NewInWord = "dear";
-        String strInWord = (new StringBuffer(str)).insert(6, NewInWord).toString();
-        System.out.println(strInWord);
+        return (new StringBuffer(str)).insert(6, NewInWord).toString();
     }
 
-    private static void removeFromText(String str) {
+    public static void printInsertAtSpecificPosition(String result) {
+        System.out.println(result);
+    }
+
+    private static String removeFromText(String str) {
         String delete = "!";
-        String strDel = str.replace(delete, "");
-        System.out.println(strDel);
+        return str.replace(delete, "");
     }
 
-    private static void replacingSubstring(String str) {
-        String newStr = str.replace("user", "programmer");
-        System.out.println(newStr);
+    public static void printRemoveFromText(String result) {
+        System.out.println(result);
+    }
+
+    private static String replacingSubstring(String str) {
+        return str.replace("user", "programmer");
+    }
+
+    public static void printReplacingSubstring(String result) {
+        System.out.println(result);
     }
 
     private static String scanner() throws IOException {
@@ -71,26 +116,39 @@ public class MainClass {
         return strScanner;
     }
 
-    private static void reverse(String str) {
+    private static String reverse(String str) {
         char[] arrayChar = str.toCharArray();
         String result = "";
         for (int i = arrayChar.length - 1; i >= 0; i--) {
             result = result + arrayChar[i];
         }
+        return result;
+    }
+
+    public static void printReverse(String result) {
         System.out.println(result);
     }
 
-    private static void removeSpaces(String str) {
+    private static String removeSpaces(String str) {
+        return str.replace(" ", "");
+    }
+
+    public static void printRemoveSpaces(String result) {
+        System.out.println(result);
+    }
+
+    public static int kolRemoveSpaces(String str) {
         int kol = 0;
         for (char i : str.toCharArray()) {
             if (i == ' ') {
                 kol++;
             }
         }
-        System.out.println(kol);
+        return kol;
+    }
 
-        String newStr = str.replace(" ", "");
-        System.out.println(newStr);
+    public static void printKolRemoveSpaces(int result) {
+        System.out.println(result);
     }
 
     private static void upperCaseLetters(StringBuilder str) {
@@ -114,58 +172,100 @@ public class MainClass {
         System.out.println();
     }
 
-    private static void replaceEmptyString(String[] arr, int size, BufferedReader scanner) throws IOException {
+    private static String[] replaceEmptyString(int size, BufferedReader scanner) throws IOException {
+        String[] arrayString = new String[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = scanner.readLine();
-            arr[i] = arr[i].isEmpty() ? arr[i] = "String is empty" : arr[i];
+            arrayString[i] = scanner.readLine();
+            arrayString[i] = arrayString[i].isEmpty() ? arrayString[i] = "String is empty" : arrayString[i];
         }
-        for (int i = 0; i < size; i++) {
-            System.out.println(" " + arr[i]);
+        return arrayString;
+    }
+
+    public static void printReplaceEmptyString(String[] arrayString) {
+        for (int i = 0; i < arrayString.length; i++) {
+            System.out.println(" " + arrayString[i]);
         }
     }
 
-    private static boolean compareInParis(String str1, String str2) {
-        boolean result = str1.equals(str2);
-
-//        System.out.println(str1.equals(str3));
-//
-//        System.out.println(str1.equals(str4));
-//
-//        System.out.println(str2.equals(str3));
-//
-//        System.out.println(str2.equals(str4));
-//
-//        System.out.println(str3.equals(str4));
-        return result;
+    public static boolean compareInParisStr1AndStr2(String strFirst, String strSecond) {
+        return strFirst.equals(strSecond);
     }
 
-    public static void equalsMethod(String str1, String str2) {
-        System.out.println(str1.equalsIgnoreCase(str2));
+    public static boolean compareInParisStr1AndStr3(String strFirst, String strSecond) {
+        return strFirst.equals(strSecond);
+    }
+
+    public static boolean compareInParisStr1AndStr4(String strFirst, String strSecond) {
+        return strFirst.equals(strSecond);
+    }
+
+    public static boolean compareInParisStr2AndStr3(String strFirst, String strSecond) {
+        return strFirst.equals(strSecond);
+    }
+
+    public static boolean compareInParisStr2AndStr4(String strFirst, String strSecond) {
+        return strFirst.equals(strSecond);
+    }
+
+    public static boolean compareInParisStr3AndStr4(String strFirst, String strSecond) {
+        return strFirst.equals(strSecond);
+    }
+
+    public static void printCompareInParis(boolean result) {
+        System.out.println(result);
+    }
+
+    public static boolean equalsMethod(String str1, String str2) {
+        return str1.equalsIgnoreCase(str2);
+    }
+
+    public static void printEqualsMethod(boolean result) {
+        System.out.println(result);
     }
 
     public static boolean operationMethod(String str1, String str4) {
-        boolean result = false;
         if (str1 == str4) {
-            result = true;
+            return true;
         }
-        return result;
+        return false;
     }
 
     public static void printOperationMethod(boolean result) {
         System.out.println(result);
     }
 
-    public static void subStringMethod(String str1, String str4) {
+    public static boolean subStringMethod(String str1, String str4) {
         str1 = " JavaJava";
-        System.out.println(str1.substring(4) == str4);
+        if (str1.substring(4) == str4) {
+            return true;
+        }
+        return false;
     }
 
-    public static void operatorNull(String str1) {
-        System.out.println(str1 == null);
+    public static void printSubStringMethod(boolean result) {
+        System.out.println(result);
     }
 
-    public static void compareOperationNull(String str1) {
+    public static boolean operatorNull(String str1) {
+        if (str1 == null) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void printOperatorNull(boolean result) {
+        System.out.println(result);
+    }
+
+    public static boolean compareOperationNull(String str1) {
         str1 = null;
-        System.out.println(str1 == null);
+        if (str1 == null) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void printCompareOperationNull(boolean result) {
+        System.out.println(result);
     }
 }

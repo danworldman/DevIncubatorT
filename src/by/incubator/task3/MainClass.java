@@ -8,38 +8,38 @@ import java.util.Scanner;
 public class MainClass {
     public static void main(String[] args) throws IOException {
         String str = "Hello, user! How are you?";
-        addingToTheEnd(str);
-        insertAtSpecificPosition(str);
-        removeFromText(str);
-        replacingSubstring(str);
-
-        String strScanner = scanner();
-        reverse(strScanner);
-        removeSpaces(strScanner);
-
-        String scannerForOutputUpperCaseLetters = new Scanner(System.in).nextLine();
-        StringBuilder strForOutputUpperCase = new StringBuilder();
-        upperCaseLetters(strForOutputUpperCase.append(scannerForOutputUpperCaseLetters));
-
-        String scannerForOutputEvenLetters = new Scanner(System.in).nextLine();
-        StringBuilder strForOutputEvenLetters = new StringBuilder();
-        upperCaseEvenLetters(strForOutputEvenLetters.append(scannerForOutputEvenLetters));
-
-        BufferedReader scannerForReplaceEmptyString = new BufferedReader(new InputStreamReader(System.in));
-        Scanner strForReplaceEmptyString = new Scanner(System.in);
-        int size = strForReplaceEmptyString.nextInt();
-        String[] arrayString = new String[size];
-        replaceEmptyString(arrayString, size, scannerForReplaceEmptyString);
+//        addingToTheEnd(str);
+//        insertAtSpecificPosition(str);
+//        removeFromText(str);
+//        replacingSubstring(str);
+//
+//        String strScanner = scanner();
+//        reverse(strScanner);
+//        removeSpaces(strScanner);
+//
+//        String scannerForOutputUpperCaseLetters = new Scanner(System.in).nextLine();
+//        StringBuilder strForOutputUpperCase = new StringBuilder();
+//        upperCaseLetters(strForOutputUpperCase.append(scannerForOutputUpperCaseLetters));
+//
+//        String scannerForOutputEvenLetters = new Scanner(System.in).nextLine();
+//        StringBuilder strForOutputEvenLetters = new StringBuilder();
+//        upperCaseEvenLetters(strForOutputEvenLetters.append(scannerForOutputEvenLetters));
+//
+//        BufferedReader scannerForReplaceEmptyString = new BufferedReader(new InputStreamReader(System.in));
+//        Scanner strForReplaceEmptyString = new Scanner(System.in);
+//        int size = strForReplaceEmptyString.nextInt();
+//        String[] arrayString = new String[size];
+//        replaceEmptyString(arrayString, size, scannerForReplaceEmptyString);
 
         String str1 = "Java";
         String str2 = "JAVA";
         String str3 = "C#";
         String str4 = "Java";
-        compareInParis(str1, str2, str3, str4);
-        equalsMethod(str1, str2);
-        operationMethod(str1, str2);
-        subStringMethod(str1, str4);
-        operatorNull(str1);
+        System.out.println(compareInParis(str1, str4));  // ещё 5 методов и print
+//        equalsMethod(str1, str2);
+//        operationMethod(str1, str2);
+//        subStringMethod(str1, str4);
+//        operatorNull(str1);
     }
 
     private static void addingToTheEnd(String str) {
@@ -124,26 +124,35 @@ public class MainClass {
         }
     }
 
-    private static void compareInParis(String str1, String str2, String str3, String str4) {
-        System.out.println(str1.equals(str2));
+    private static boolean compareInParis(String str1, String str2) {
+        boolean result = str1.equals(str2);
 
-        System.out.println(str1.equals(str3));
-
-        System.out.println(str1.equals(str4));
-
-        System.out.println(str2.equals(str3));
-
-        System.out.println(str2.equals(str4));
-
-        System.out.println(str3.equals(str4));
+//        System.out.println(str1.equals(str3));
+//
+//        System.out.println(str1.equals(str4));
+//
+//        System.out.println(str2.equals(str3));
+//
+//        System.out.println(str2.equals(str4));
+//
+//        System.out.println(str3.equals(str4));
+        return result;
     }
 
     public static void equalsMethod(String str1, String str2) {
         System.out.println(str1.equalsIgnoreCase(str2));
     }
 
-    public static void operationMethod(String str1, String str4) {
-        System.out.println(str1 == str4);
+    public static boolean operationMethod(String str1, String str4) {
+        boolean result = false;
+        if (str1 == str4) {
+            result = true;
+        }
+        return result;
+    }
+
+    public static void printOperationMethod(boolean result) {
+        System.out.println(result);
     }
 
     public static void subStringMethod(String str1, String str4) {

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56766723-51b3-423b-a939-22202f20247a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/by/incubator/task5/MonitoringSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/incubator/task5/MonitoringSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +12,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
